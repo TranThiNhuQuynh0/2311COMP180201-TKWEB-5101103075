@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý sản phẩm</title>
+  <link rel="stylesheet" href="./qlsp.css">
+</head>
+<body>
+
+  <h2>Ứng dụng Quản lý sản phẩm</h2>
+
+  <div>
+    <h3>Thêm sản phẩm mới</h3>
+    <input type="text" id="productName" placeholder="Nhập tên sản phẩm">
+    <button onclick="addProduct()">Thêm</button>
+  </div>
+
+  <div>
+    <h3>Danh sách sản phẩm</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Tên sản phẩm</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="productList"></tbody>
+    </table>
+  </div>
+
+  <script>
+    let products = ["Sony Xperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4", "Apple iPhone 6s"];
+
+    function showProducts() {
+      let table = "";
+      for (let i = 0; i < products.length; i++) {
+        table +=`
+          <tr>
+            <td>${products[i]}</td>
+            <td>
+              <button onclick="editProduct(${i})">Sửa</button>
+              <button onclick="deleteProduct(${i})">Xóa</button>
+            </td>
+          </tr>
+        `;
+
+      }
+      document.getElementById("productList").innerHTML = table;
+    }
+
+    function addProduct() {
+      let name = document.getElementById("productName").value.trim();
+      if (name === "") {
+        alert("Vui lòng nhập tên sản phẩm!");
+        return;
+      }
+      products.push(name);
+      document.getElementById("productName").value = "";
+      showProducts();
+    }
+
+    function editProduct(index) {
+      let newName = prompt("Nhập tên mới cho sản phẩm:", products[index]);
+      if (newName && newName.trim() !== "") {
+        products[index] = newName.trim();
+        showProducts();
+      }
+    }
+
+    function deleteProduct(index) {
+      if (confirm("Bạn có chắc muốn xóa sản phẩm này không?")) {
+        products.splice(index, 1);
+        showProducts();
+      }
+    }
+
+    showProducts();
+  </script>
+
+</body>
+</html>
