@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ cá vui nhộn</title>
+    <link rel="stylesheet" href="./mystyle.css">
+</head>
+<body>
+    <div id="controls">
+        <button id="toggleBackground">Chuyển Cảnh Nền</button>
+        <button id="toggleMusic">Bật/Tắt Nhạc</button>
+    </div>
+    <audio id="backgroundMusic" loop>
+        <source src="./media/tieng_lan_boi_duoi_nuoc_song_bien-www_tiengdong_com.mp3" type="audio/mpeg">
+    </audio>
+    <div id="content">
+        <div id="shark"><img src="./images/shark.png"; width="auto" height="auto"> </div>
+        <div id="driver1"><img src="./images/diver1.png"; width="auto" height="auto"> </div>
+        <div id="driver2"><img src="./images/diver2.png"; width="auto" height="auto"> </div>
+        <div id="driver3"><img src="./images/diver3.png"; width="auto" height="auto"> </div>
+        <div id="faint"><img src="./images/faintSchool.png"; width="auto" height="auto"> </div>
+        <div id="fish"><img src="./images/goldFishSchool.png"; width="auto" height="auto"> </div>
+        <div id="turtle"><img src="./images/turtle.png"; width="auto" height="auto"> </div>
+    </div>
+    <script>
+        const contentElement = document.getElementById('content');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const toggleBackgroundButton = document.getElementById('toggleBackground');
+        const toggleMusicButton = document.getElementById('toggleMusic');
+        
+        const backgrounds = [
+            'url("./images/anhnen1.jpg")',
+            'url("./images/anhnen3.jpg")',
+            'url("./images/anhnen4.jpg")'
+        ];
+        let currentBackgroundIndex = 0;
+
+        function updateBackground() {
+            contentElement.style.backgroundImage = backgrounds[currentBackgroundIndex];
+        }
+
+        function toggleBackground() {
+            currentBackgroundIndex = (currentBackgroundIndex + 1) % backgrounds.length;
+            updateBackground();
+        }
+
+        toggleBackgroundButton.addEventListener('click', toggleBackground);
+        updateBackground(); 
+
+
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                backgroundMusic.pause();
+                toggleMusicButton.textContent = 'Bật Nhạc';
+            } else {
+                backgroundMusic.play().catch(error => {
+                     console.log("Lỗi phát nhạc:", error);
+                     alert("Vui lòng tương tác lần nữa để bật nhạc.");
+                });
+                toggleMusicButton.textContent = 'Tắt Nhạc';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        toggleMusicButton.addEventListener('click', toggleMusic);
+        toggleMusicButton.textContent = 'Bật Nhạc';
+    </script>
+</body>
+</html>

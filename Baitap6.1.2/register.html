@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lễ Hội Halloween 2025 - Đăng Ký Tham Gia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <audio id="background-audio" loop>
+        <source src="./media/halloween.mp3" type="audio/mp3">
+    </audio>
+
+    <header class="main-header">
+        <div class="logo">Halloween Fest</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="members.html">Nhóm</a></li>
+                <li><a href="history.html">Lịch Sử</a></li>
+                <li><a href="shop.html">Gian Hàng</a></li>
+                <li><a href="gallery.html">Bộ Sưu Tập</a></li>
+                <li><a href="register.html" class="active">Đăng Ký</a></li>
+                <li><a href="contact.html">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <button id="toggle-audio" class="audio-control">
+    <i class="fas fa-volume-off"></i> Bật Nhạc
+</button>
+    <main class="content-area">
+        <h1>Đăng Ký Tham Gia Lễ Hội (Form)</h1>
+        <p class="section-description">Hãy điền thông tin để giữ chỗ trong đêm hội hóa trang lớn nhất năm!</p>
+
+        <form action="/submit-registration" method="POST" class="main-form register-form">
+            <fieldset>
+                <legend><i class="fas fa-hat-wizard"></i> Thông Tin Người Tham Gia</legend>
+                
+                <label for="name">Họ và Tên Ma Quái:</label>
+                <input type="text" id="name" name="name" placeholder="Tên bạn muốn được gọi trong lễ hội" required>
+
+                <label for="phone">Số Điện Thoại:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Để BTC liên hệ" required>
+                
+                <label for="costume-type">Loại Trang Phục Dự Định:</label>
+                <select id="costume-type" name="costume-type" required>
+                    <option value="">-- Chọn loại --</option>
+                    <option value="ghost">Ma/Linh hồn</option>
+                    <option value="vampire">Ma cà rồng</option>
+                    <option value="zombie">Xác sống (Zombie)</option>
+                    <option value="other">Khác</option>
+                </select>
+
+                <label for="costume-desc">Mô Tả Ý Tưởng Trang Phục (Chi tiết):</label>
+                <textarea id="costume-desc" name="costume-desc" rows="4" placeholder="VD: Trang phục cô dâu ma rách rưới, có máu giả..."></textarea>
+                
+                <label for="terms">
+                    <input type="checkbox" id="terms" name="terms" required> 
+                    Tôi đã đọc và đồng ý với các quy tắc của lễ hội.
+                </label>
+
+                <button type="submit" class="btn-submit">Xác Nhận Đăng Ký</button>
+            </fieldset>
+        </form>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Nhóm Thiết Kế Halloween Fest. All Hallows' Eve Reserved.</p>
+    </footer>
+
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+    <script src="./lib/script.js"></script>
+</body>
+</html>

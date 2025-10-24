@@ -1,0 +1,131 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.cv-container {
+    display: flex;
+    width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 1200px;
+}
+
+.left-col {
+    flex: 4;
+    background-color: #fce4ec; 
+    padding: 30px 20px;
+    color: #333;
+    border-right: 2px solid #f8bbd0;
+}
+
+.right-col {
+    flex: 6;
+    padding: 30px 40px;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f8bbd0; 
+}
+
+.avatar-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin: 0 auto 10px;
+    display: block; 
+    border: 3px solid #f06292; 
+}
+
+.profile-header h1 {
+    font-size: 1.8em;
+    margin: 5px 0;
+    color: #e91e63; 
+}
+
+.profile-header .title {
+    font-weight: bold;
+    color: #e91e63; 
+    margin-top: 0;
+}
+.section {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.left-col .section h2 {
+    color: #e91e63; 
+    font-size: 1.2em;
+    border-bottom: 2px solid #e91e63;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.right-col .section h2 {
+    color: #212121;
+    font-size: 1.5em;
+    border-bottom: 3px solid #f06292; 
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.item {
+    margin-bottom: 15px;
+}
+
+.item h3 {
+    margin: 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.item .company {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.item .time {
+    font-weight: bold;
+    color: #e91e63; 
+    margin-bottom: 5px;
+}
+
+.item ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 5px 0;
+    font-size: 0.95em;
+}
+
+.skill-item {
+    margin-bottom: 15px;
+}
+
+.skill-item p {
+    margin: 0 0 5px 0;
+    font-weight: bold;
+}
+
+.skill-bar {
+    background-color: #e0e0e0;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    background-color: #f06292; 
+    border-radius: 4px;
+}

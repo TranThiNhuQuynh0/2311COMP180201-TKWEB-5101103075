@@ -1,0 +1,389 @@
+/* Màu chủ đạo: Cam (#ff6600), Đen (#1a1a1a), Trắng (#ffffff) */
+:root {
+    --color-primary: #ff6600; /* Cam */
+    --color-secondary: #1a1a1a; /* Đen */
+    --color-text: #ffffff; /* Trắng */
+    --font-spooky: 'Creepster', cursive; /* Giả định dùng Google Font */
+}
+
+body {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header, Footer dùng Flexbox để căn chỉnh */
+.main-header, .main-footer {
+    background-color: #000000;
+    color: var(--color-primary);
+    padding: 20px;
+    display: flex; /* Bắt đầu dùng Flexbox */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-nav a {
+    color: var(--color-primary);
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.main-nav a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.content-area {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(26, 26, 26, 0.9); /* Nền hơi trong suốt */
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 0 15px var(--color-primary);
+}
+
+/* Ứng dụng CSS Grid cho layout 2 cột (ví dụ: trang sản phẩm, liên hệ) */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Tỷ lệ 1:3 */
+    gap: 20px;
+}
+/* ==================================== */
+/* 4. STYLE CHO CÁC TRANG CỤ THỂ - GALLERY */
+/* ==================================== */
+
+.gallery-grid {
+    /* Sử dụng CSS Grid cho layout ảnh */
+    display: grid;
+    /* Tự động điều chỉnh số cột, tối thiểu 250px cho mỗi cột */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 15px; /* Khoảng cách giữa các ảnh */
+    padding: 20px 0;
+}
+
+.gallery-item {
+    background-color: #000000;
+    border: 3px solid var(--color-primary); /* Viền màu cam */
+    overflow: hidden; /* Quan trọng để hiệu ứng scale không tràn */
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px; /* Chiều cao cố định cho ảnh */
+    object-fit: cover; /* Đảm bảo ảnh che hết khung */
+    display: block;
+    /* Hiệu ứng chuyển động mượt mà cho transform và box-shadow */
+    transition: transform 0.5s ease-in-out, filter 0.5s ease;
+    filter: grayscale(80%); /* Giảm độ bão hòa màu để tăng vẻ kinh dị */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1) rotate(1deg); /* Phóng to và xoay nhẹ khi hover */
+    filter: grayscale(0%) brightness(1.2); /* Phục hồi màu sắc và làm sáng hơn */
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--color-primary);
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    /* Hiệu ứng trượt lên của chú thích */
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover figcaption {
+    transform: translateY(0); /* Chú thích trượt lên khi hover */
+
+}
+.main-form label, .main-form input[type="text"], .main-form input[type="email"], .main-form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.main-form input, .main-form textarea {
+    padding: 10px;
+    border: 1px solid var(--color-primary);
+    background-color: #333;
+    color: var(--color-text);
+    border-radius: 5px;
+}
+
+.btn-submit {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #ff8c33;
+}
+/* ==================================== */
+/* 4. STYLE CHO CÁC TRANG CỤ THỂ - HISTORY */
+/* ==================================== */
+
+.history-content {
+    padding: 10px;
+}
+
+.history-content h2 {
+    color: var(--color-primary);
+    border-bottom: 2px dashed #333;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+.history-content p {
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* Định dạng container video */
+.video-container {
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #000000;
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.4);
+}
+
+.video-container video {
+    display: block;
+    max-width: 100%; /* Đảm bảo video responsive */
+    height: auto;
+    border: 5px solid var(--color-secondary);
+}
+/* ==================================== */
+/* 4. STYLE CHO CÁC TRANG CỤ THỂ - SHOP */
+/* ==================================== */
+
+.grid-container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    /* 3 cột trên desktop, 2 cột trên tablet, 1 cột trên mobile */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+}
+
+.product-item {
+    background-color: #000000;
+    border: 2px solid var(--color-secondary);
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.product-item:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.6);
+}
+
+.product-img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    font-size: 1.2em;
+    color: var(--color-primary);
+    margin: 10px 0;
+}
+
+.btn-details {
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-details:hover {
+    background-color: var(--color-primary);
+    color: #000000;
+}
+
+.btn-buy {
+    /* Thay #f00 bằng màu cam chủ đạo */
+    background-color: var(--color-primary); 
+    color: var(--color-secondary); /* Thay trắng bằng màu đen phụ để chữ nổi bật hơn */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+    /* Thêm transition cho nút mua */
+    transition: background-color 0.3s;
+}
+
+/* Thêm hiệu ứng hover cho nút mua để nó không bị trơ */
+.btn-buy:hover {
+    background-color: #e65c00; /* Màu cam đậm hơn */
+}
+
+/* Chi tiết sản phẩm ban đầu phải ẩn */
+.product-details {
+    padding-top: 15px;
+    border-top: 1px dashed #333;
+    text-align: left;
+    display: none; /* Rất quan trọng: jQuery sẽ dùng slideToggle để hiện */
+}
+/* Bố cục lưới cho danh sách thành viên */
+.team-grid {
+    /* Sử dụng CSS Grid */
+    display: grid;
+    
+    /* Chia thành 4 cột bằng nhau trên màn hình lớn */
+    grid-template-columns: repeat(4, 1fr);
+    
+    /* Khoảng cách giữa các thẻ */
+    gap: 30px; 
+    
+    /* Canh giữa nội dung */
+    justify-items: center; 
+    
+    padding: 20px 0;
+}
+
+/* Định dạng thẻ thành viên */
+.member-card {
+    /* Kích thước tối đa cho thẻ */
+    max-width: 250px; 
+    
+    /* Canh giữa chữ */
+    text-align: center; 
+    
+    /* Thêm padding và background */
+    padding: 20px;
+    background-color: #1a1a1a; /* Màu nền tối */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Tạo bóng mờ */
+}
+
+/* Chỉnh phông chữ và màu chữ cho vai trò */
+.member-role {
+    color: #ff6600; /* Màu cam nổi bật */
+    font-weight: bold;
+    margin: 5px 0 10px 0;
+}
+
+/* Thiết bị nhỏ (di động) - Chuyển sang 1 cột */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Thiết bị vừa (máy tính bảng) - Chuyển sang 2 cột */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* Trong file style.css */
+
+/* Kích thước ảnh của thành viên */
+.member-img {
+    /* Đặt kích thước cố định cho ảnh */
+    width: 120px; /* Chiều rộng */
+    height: 120px; /* Chiều cao */
+    
+    /* Biến ảnh thành hình tròn */
+    border-radius: 50%;
+    
+    /* Đảm bảo ảnh được cắt và hiển thị đẹp trong khung */
+    object-fit: cover; 
+    
+    /* Thêm một chút viền để nổi bật */
+    border: 4px solid #ff6600; /* Viền màu cam Halloween */
+    
+    /* Tạo khoảng cách dưới ảnh */
+    margin-bottom: 10px;
+}
+/* Trong file style.css */
+.audio-control {
+    position: fixed; /* Giữ nút cố định trên màn hình */
+    top: 80px;
+    right: 20px;
+    z-index: 1000; /* Đảm bảo nút nằm trên các phần tử khác */
+    
+    background-color: #ff6600; /* Màu cam Halloween */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s;
+}
+
+.audio-control:hover {
+    background-color: #e65c00; /* Màu cam đậm hơn khi di chuột */
+}
+
+.audio-control i {
+    margin-right: 5px;
+}
+/* ==================================== */
+/* BỔ SUNG: RESPONSIVE CHO KHU VỰC CHUNG */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    /* Điều chỉnh khu vực nội dung chính */
+    .content-area {
+        width: 95%; /* Cho nội dung rộng hơn trên di động */
+        margin: 20px auto;
+        padding: 15px;
+    }
+    
+    /* Điều chỉnh thanh navigation để hiển thị theo cột hoặc menu ẩn */
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .main-nav a {
+        padding: 10px 0;
+        border-top: 1px solid #333;
+    }
+}

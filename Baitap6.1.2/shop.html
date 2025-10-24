@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lễ Hội Halloween 2025 - Gian Hàng</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <audio id="background-audio" loop>
+        <source src="./media/halloween.mp3" type="audio/mp3">
+    </audio>
+
+    <header class="main-header">
+        <div class="logo">Halloween Fest</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="members.html">Nhóm</a></li>
+                <li><a href="history.html">Lịch Sử</a></li>
+                <li><a href="shop.html" class="active">Gian Hàng</a></li>
+                <li><a href="gallery.html">Bộ Sưu Tập</a></li>
+                <li><a href="register.html">Đăng Ký</a></li>
+                <li><a href="contact.html">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+   <button id="toggle-audio" class="audio-control">
+    <i class="fas fa-volume-off"></i> Bật Nhạc
+</button>
+    <main class="content-area">
+        <h1>Gian Hàng Bán Theo Lễ Hội</h1>
+        <p class="section-description">Hãy trang bị những vật phẩm kinh dị nhất cho đêm hội của bạn!</p>
+        
+        <ul class="product-list grid-container">
+            
+            <li class="product-item" data-price="9.99">
+                <img src="./images/matnacuoi.webp" alt="Mặt Nạ Bí Ngô" class="product-img">
+                <h3>Mặt Nạ Bí Ngô Cười</h3>
+                <p class="product-price">Giá: **$9.99**</p>
+                <button class="btn-details" data-action="show">Xem Chi Tiết <i class="fas fa-caret-down"></i></button>
+                <div class="product-details">
+                    <p><strong>Chất liệu:</strong> Cao su thân thiện, sơn tĩnh điện.</p>
+                    <p><strong>Mô tả:</strong> Chiếc mặt nạ hoàn hảo cho đêm kinh hoàng, có đèn LED tùy chỉnh.</p>
+                    <button class="btn-buy">Mua Ngay</button>
+                </div>
+            </li>
+            
+            <li class="product-item" data-price="19.50">
+                <img src="./images/aochoang.jpg" alt="Áo Choàng Ma Cà Rồng" class="product-img">
+                <h3>Áo Choàng Ma Cà Rồng</h3>
+                <p class="product-price">Giá: **$19.50**</p>
+                <button class="btn-details" data-action="show">Xem Chi Tiết <i class="fas fa-caret-down"></i></button>
+                <div class="product-details">
+                    <p><strong>Chất liệu:</strong> Vải nhung đen, có lót lụa đỏ bên trong.</p>
+                    <p><strong>Mô tả:</strong> Tăng thêm vẻ bí ẩn và quyền lực cho trang phục Dracula.</p>
+                    <button class="btn-buy">Mua Ngay</button>
+                </div>
+            </li>
+            
+            <li class="product-item" data-price="5.00">
+                <img src="./images/chaimau.jpg" alt="Máu Giả" class="product-img">
+                <h3>Chai Máu Giả (30ml)</h3>
+                <p class="product-price">Giá: **$5.00**</p>
+                <button class="btn-details" data-action="show">Xem Chi Tiết <i class="fas fa-caret-down"></i></button>
+                <div class="product-details">
+                    <p><strong>Thành phần:</strong> An toàn, không độc hại, rửa sạch bằng nước.</p>
+                    <p><strong>Mô tả:</strong> Máu đỏ tươi, lý tưởng để tạo hiệu ứng thây ma và vết thương.</p>
+                    <button class="btn-buy">Mua Ngay</button>
+                </div>
+            </li>
+            
+            <li class="product-item" data-price="12.75">
+                <img src="./images/nhen.jpg" alt="Nhện Cao Su" class="product-img">
+                <h3>Bộ 10 Con Nhện Cao Su</h3>
+                <p class="product-price">Giá: **$12.75**</p>
+                <button class="btn-details" data-action="show">Xem Chi Tiết <i class="fas fa-caret-down"></i></button>
+                <div class="product-details">
+                    <p><strong>Kích thước:</strong> 10cm x 10cm, như thật.</p>
+                    <p><strong>Mô tả:</strong> Hoàn hảo để trang trí mạng nhện hoặc dọa bạn bè.</p>
+                    <button class="btn-buy">Mua Ngay</button>
+                </div>
+            </li>
+            
+        </ul>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Nhóm Thiết Kế Halloween Fest. All Hallows' Eve Reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+    <script src="./lib/script.js"></script>
+</body>
+</html>

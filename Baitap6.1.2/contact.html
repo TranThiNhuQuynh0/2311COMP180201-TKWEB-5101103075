@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lễ Hội Halloween 2025 - Liên Hệ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <audio id="background-audio" loop>
+        <source src="./media/halloween.mp3" type="audio/mp3">
+    </audio>
+
+    <header class="main-header">
+        <div class="logo">Halloween Fest</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="members.html">Nhóm</a></li>
+                <li><a href="history.html">Lịch Sử</a></li>
+                <li><a href="shop.html">Gian Hàng</a></li>
+                <li><a href="gallery.html">Bộ Sưu Tập</a></li>
+                <li><a href="register.html">Đăng Ký</a></li>
+                <li><a href="contact.html" class="active">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <button id="toggle-audio" class="audio-control">
+        <i class="fas fa-volume-off"></i> Bật Nhạc
+    </button>
+    <main class="content-area">
+        <h1>Liên Hệ Với Hội Đồng Ma Quái</h1>
+        <p class="section-description">Mọi thắc mắc, góp ý hoặc lời nguyền xin gửi về địa chỉ sau.</p>
+        
+        <form action="/submit-contact" method="POST" class="main-form contact-form">
+            <fieldset>
+                <legend><i class="fas fa-ghost"></i> Gửi Tin Nhắn Ma Quái</legend>
+                
+                <label for="name">Họ và Tên:</label>
+                <input type="text" id="name" name="name" placeholder="Tên ma/quỷ của bạn" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Địa chỉ linh hồn" required>
+                
+                <label for="subject">Chủ Đề:</label>
+                <input type="text" id="subject" name="subject" placeholder="VD: Góp ý trang phục" required>
+
+                <label for="message">Nội Dung:</label>
+                <textarea id="message" name="message" rows="6" placeholder="Viết thông điệp của bạn tại đây..."></textarea>
+
+                <button type="submit" class="btn-submit">Gửi Lời Nhắn</button>
+            </fieldset>
+        </form>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Nhóm Thiết Kế Halloween Fest. All Hallows' Eve Reserved.</p>
+    </footer>
+
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+    <script src="./lib/script.js"></script>
+</body>
+</html>
